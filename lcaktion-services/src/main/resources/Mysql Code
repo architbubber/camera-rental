@@ -1,0 +1,55 @@
+-- Table for product details
+CREATE TABLE Products (
+    product_id INT PRIMARY KEY AUTO_INCREMENT,
+    product_name VARCHAR(255) NOT NULL,
+    description TEXT,
+    quantity INT NOT NULL
+);
+
+-- Table for booking details
+CREATE TABLE Bookings (
+    booking_id INT PRIMARY KEY AUTO_INCREMENT,
+    product_id INT,
+    start_date DATE,
+    end_date DATE,
+    quantity INT,
+    FOREIGN KEY (product_id) REFERENCES Products(product_id)
+);
+
+-- Insert sample products
+INSERT INTO Products (product_name, description, quantity)
+VALUES
+    ('Canon DSLR', 'High quality Canon DSLR camera', 10),
+    ('Nikon DSLR', 'Professional Nikon DSLR camera', 8),
+    ('Sony Mirrorless', 'Compact Sony mirrorless camera', 5);
+
+-- Insert sample bookings
+INSERT INTO Bookings (product_id, start_date, end_date, quantity)
+VALUES
+    (1, '2024-11-01', '2024-11-05', 3),
+    (1, '2024-11-04', '2024-11-06', 2),
+    (2, '2024-11-02', '2024-11-05', 4),
+    (3, '2024-11-01', '2024-11-10', 2);
+
+-- Define start and end of the desired date range
+SET @start_date = '2024-11-03';
+SET @end_date = '2024-11-05';
+
+-- Query to find availability
+SELECT
+    p.product_id,
+    p.product_name,
+    p.quantity - IFNULL(SUM(b.quantity), 0) AS available_quantity
+FROM
+    Products p
+LEFT JOIN
+    Bookings b
+ON
+    p.product_id = b.product_id
+    AND (
+        (b.start_date <= @end_date AND b.end_date >= @start_date)
+    )
+GROUP BY
+    p.product_id
+HAVING
+    available_quantity > 0;
