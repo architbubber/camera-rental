@@ -1,0 +1,8 @@
+API Summary Table
+API	Endpoint	Method	Usage
+Add Product	/products	POST	Add a new product to the inventory.
+Update Product	/products/{id}	PUT	Update an existing product's details.
+Get All Products	/products	GET	Fetch all products from the inventory.
+Make a Booking	/bookings	POST	Create a new booking for a product.
+Update Booking	/bookings/{id}	PUT	Update details of an existing booking.
+Get Available Products	/bookings/availability	GET	Get available products for a date range.

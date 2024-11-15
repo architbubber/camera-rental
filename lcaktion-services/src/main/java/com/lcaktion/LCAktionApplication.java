@@ -1,13 +1,13 @@
-package com.lcaktion.services;
+package com.lcaktion;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ServicesApplication {
+public class LCAktionApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ServicesApplication.class, args);
+		SpringApplication.run(LCAktionApplication.class, args);
 	}
 
 }
