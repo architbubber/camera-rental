@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/camera-rental/static/css/main.e28caf84.css",
+    "main.js": "/camera-rental/static/js/main.499ce9f2.js",
+    "static/js/453.81cf0bf3.chunk.js": "/camera-rental/static/js/453.81cf0bf3.chunk.js",
+    "static/media/android-chrome-512x512.png": "/camera-rental/static/media/android-chrome-512x512.c79b3869d2f24566b61d.png",
+    "index.html": "/camera-rental/index.html",
+    "main.e28caf84.css.map": "/camera-rental/static/css/main.e28caf84.css.map",
+    "main.499ce9f2.js.map": "/camera-rental/static/js/main.499ce9f2.js.map",
+    "453.81cf0bf3.chunk.js.map": "/camera-rental/static/js/453.81cf0bf3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e28caf84.css",
+    "static/js/main.499ce9f2.js"
+  ]
+}
